@@ -13,7 +13,7 @@ export const Equation: React.FC<{
 
   return (
     <>
-      <button id={block.id}>
+      <button id={block.id} name={content}>
           {content}
       </button>
     </>
