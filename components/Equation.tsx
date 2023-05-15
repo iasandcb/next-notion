@@ -7,11 +7,9 @@ import { useNotionContext } from 'react-notion-x'
 
 export const Equation: React.FC<{
   block: EquationBlock
-  className?: string
-}> = ({ block, className }) => {
+}> = ({ block }) => {
   const { recordMap } = useNotionContext()
   const content = getBlockTitle(block, recordMap)
-  console.log('B', block.id);
 
   return (
     <>

@@ -9,19 +9,16 @@ import { useNotionContext } from 'react-notion-x'
 
 export const Code: React.FC<{
   block: CodeBlock
-  defaultLanguage?: string
-  className?: string
-}> = ({ block, defaultLanguage = 'javascript', className }) => {
+}> = ({ block }) => {
   const { recordMap } = useNotionContext()
   const content = getBlockTitle(block, recordMap)
   const caption = block.properties.caption
 
   if (caption) {
     let link = '';
-    for (let c of caption) {
+    for (const c of caption) {
       link += c[0]
     }
-    console.log('L', link);
     return (
       <>
         <Script 
