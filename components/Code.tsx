@@ -15,10 +15,10 @@ export const Code: React.FC<{
   const caption = block.properties.caption
 
   if (caption) {
-    let link = '';
-    for (const c of caption) {
-      link += c[0]
-    }
+    const link = caption.reduce(
+      (accumulator, currentValue) => accumulator + currentValue[0],
+      ''
+    );
     return (
       <>
         <Script 
