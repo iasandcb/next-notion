@@ -30,11 +30,12 @@ It uses Notion as a CMS, [react-notion-x](https://github.com/NotionX/react-notio
 - Quick search via CMD+K / CMD+P
 - Responsive for different devices
 - Optimized for Next.js and Vercel
+- Buttons by Equation blocks (will be replaced by Button blocks when the official APIs support the type)
+- JavaScripts by Code blocks
 
 ## Demos
 
-- [Default demo](https://nextjs-notion-starter-kit.transitivebullsh.it) - Deployed from the `main` branch
-- [My site](https://transitivebullsh.it) - Deployed from the `transitive-bullshit` branch
+- [My site](https://nextjs-notion-starter-kit-psi-azure.vercel.app/)
 
 ## Setup
 
