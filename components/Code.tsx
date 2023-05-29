@@ -14,9 +14,9 @@ export const Code: React.FC<{
   const content = getBlockTitle(block, recordMap)
   const caption = block.properties.caption
   const language = block.properties.language[0][0]
+  const srcStrategy = content === 'lazyOnload' ? 'lazyOnload' : 'beforeInteractive'
   const inlineStrategy = language === 'TypeScript' ? 'afterInteractive' : 'lazyOnload'
   const scriptType = language === 'TypeScript' ? 'text/typescript' : 'text/javascript'
-  console.log('C', language, scriptType)
   if (caption) {
     const link = caption.reduce(
       (accumulator, currentValue) => accumulator + currentValue[0],
@@ -26,7 +26,7 @@ export const Code: React.FC<{
       <>
         <Script 
           src={link} 
-          strategy="beforeInteractive"
+          strategy={srcStrategy}
         />
       </>
     )

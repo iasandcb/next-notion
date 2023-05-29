@@ -36,7 +36,7 @@ const requestIdleCallback =
     self.requestIdleCallback &&
     self.requestIdleCallback.bind(window)) ||
   function (cb: IdleRequestCallback): number {
-    let start = Date.now()
+    const start = Date.now()
     return self.setTimeout(function () {
       cb({
         didTimeout: false,
