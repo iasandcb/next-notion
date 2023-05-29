@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import Script from 'next/script'
+import Script from './Script'
 
 import { CodeBlock } from 'notion-types'
 import { getBlockTitle } from 'notion-utils'
@@ -14,8 +14,9 @@ export const Code: React.FC<{
   const content = getBlockTitle(block, recordMap)
   const caption = block.properties.caption
   const language = block.properties.language[0][0]
-//  const inlineStrategy = language === 'TypeScript' ? 'lazyOnload' : 'afterInteractive'
+  const inlineStrategy = language === 'TypeScript' ? 'afterInteractive' : 'lazyOnload'
   const scriptType = language === 'TypeScript' ? 'text/typescript' : 'text/javascript'
+  console.log('C', language, scriptType)
   if (caption) {
     const link = caption.reduce(
       (accumulator, currentValue) => accumulator + currentValue[0],
@@ -32,7 +33,7 @@ export const Code: React.FC<{
   } else {
     return (
       <>
-        <Script scriptType={scriptType}>
+        <Script strategy={inlineStrategy} scriptType={scriptType}>
           {content}
         </Script>
       </>
