@@ -13,8 +13,9 @@ export const Code: React.FC<{
   const { recordMap } = useNotionContext()
   const content = getBlockTitle(block, recordMap)
   const caption = block.properties.caption
-  const language = block.properties.language
-  const inlineStrategy = language === 'typescript' ? 'lazyOnload' : 'afterInteractive'
+  const language = block.properties.language[0][0]
+//  const inlineStrategy = language === 'TypeScript' ? 'lazyOnload' : 'afterInteractive'
+  const scriptType = language === 'TypeScript' ? 'text/typescript' : 'text/javascript'
   if (caption) {
     const link = caption.reduce(
       (accumulator, currentValue) => accumulator + currentValue[0],
@@ -31,7 +32,7 @@ export const Code: React.FC<{
   } else {
     return (
       <>
-        <Script strategy={inlineStrategy}>
+        <Script scriptType={scriptType}>
           {content}
         </Script>
       </>
