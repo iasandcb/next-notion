@@ -72,6 +72,7 @@ const ignoreProps = [
   'children',
   'onError',
   'strategy',
+  'scriptType'
 ]
 
 const loadScript = (props: ScriptProps): void => {

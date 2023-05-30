@@ -16,7 +16,7 @@ export const Code: React.FC<{
   const language = block.properties.language[0][0]
   const srcStrategy = content === 'lazyOnload' ? 'lazyOnload' : 'beforeInteractive'
   const inlineStrategy = language === 'TypeScript' ? 'afterInteractive' : 'lazyOnload'
-  const scriptType = language === 'TypeScript' ? 'text/typescript' : 'text/javascript'
+  const inlineType = language === 'TypeScript' ? 'text/typescript' : 'text/javascript'
   if (caption) {
     const link = caption.reduce(
       (accumulator, currentValue) => accumulator + currentValue[0],
@@ -33,7 +33,7 @@ export const Code: React.FC<{
   } else {
     return (
       <>
-        <Script strategy={inlineStrategy} scriptType={scriptType}>
+        <Script strategy={inlineStrategy} scriptType={inlineType}>
           {content}
         </Script>
       </>

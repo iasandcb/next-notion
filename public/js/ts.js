@@ -1,6 +1,5 @@
 const tsTranspiledEvent = new Event('tsTranspiled')
 
-console.log('TTT')
 const workerFile = window.URL.createObjectURL(
   new Blob(
     [
@@ -24,7 +23,7 @@ const workerFile = window.URL.createObjectURL(
 
         onmessage = ({data: [sourceUrl, sourceCode]}) => {
           const raw = sourceCode ? sourceCode : load(sourceUrl)
-          const transpiled = ts.transpile(raw)
+          const transpiled = ts.transpile(raw, {target: 2})
           postMessage(transpiled)
         }
       `,
@@ -49,9 +48,13 @@ const f = async () => {
           w.postMessage([src, innerHtml])
           w.onmessage = ({data: transpiled}) => {
             const newScript = document.createElement('script')
-            newScript.innerHTML = `window.addEventListener('tsTranspiled', function() {
+            // newScript.innerHTML = `window.addEventListener('tsTranspiled', function() {
+            //   ${transpiled}
+            // })`
+            newScript.type = 'module'
+            newScript.innerHTML = `
               ${transpiled}
-            })`
+            `
             scripts[i].replaceWith(newScript)
             resolve()
           }
