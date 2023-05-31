@@ -29,7 +29,7 @@ import { PageHead } from './PageHead'
 import styles from './styles.module.css'
 
 import { Code } from './Code'
-import { Equation } from './Equation'
+import { Callout } from './Callout'
 
 // -----------------------------------------------------------------------------
 // dynamic imports for optional components
@@ -40,6 +40,11 @@ const Collection = dynamic(() =>
     (m) => m.Collection
   )
 )
+
+const Equation = dynamic(() =>
+  import('react-notion-x/build/third-party/equation').then((m) => m.Equation)
+)
+
 const Pdf = dynamic(
   () => import('react-notion-x/build/third-party/pdf').then((m) => m.Pdf),
   {
@@ -117,6 +122,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
       nextLink: Link,
       Code,
       Collection,
+      Callout,
       Equation,
       Pdf,
       Modal,
