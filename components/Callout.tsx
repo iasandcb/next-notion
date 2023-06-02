@@ -13,9 +13,8 @@ export const Callout: React.FC<{
 
   return (
     <>
-      <button id={block.id} name={content}>
-          {content}
-      </button>
+      <div id={content}>
+      </div>
     </>
   )
 }
