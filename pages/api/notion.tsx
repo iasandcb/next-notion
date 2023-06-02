@@ -5,7 +5,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   const results = {result: 'ok'}
 
   const notion = new Client({
-    auth: 'secret_e0t6DqSWEnPJp8cYs4XYUXXB6l0JDfgwyGDqNVUZp8X',
+    auth: '',
   })
 
   console.log('n', notion)
