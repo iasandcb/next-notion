@@ -23,7 +23,7 @@ const workerFile = window.URL.createObjectURL(
 
         onmessage = ({data: [sourceUrl, sourceCode]}) => {
           const raw = sourceCode ? sourceCode : load(sourceUrl)
-          const transpiled = ts.transpile(raw, {target: 2})
+          const transpiled = ts.transpile(raw, {target: 2, jsx: 'react'})
           postMessage(transpiled)
         }
       `,
