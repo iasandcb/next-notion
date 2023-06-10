@@ -1,10 +1,21 @@
-<p align="center">
-  <a href="https://transitivebullsh.it/nextjs-notion-starter-kit">
-    <img alt="Example article page" src="https://user-images.githubusercontent.com/552829/160132094-12875e09-41ec-450a-80fc-ae8cd488129d.jpg" width="689">
-  </a>
-</p>
+# Next Notion
 
-# Next.js Notion Starter Kit
+## Starter
+- Fork this repo.
+- Get your Notion API key.
+- Deploy your repo to Vercel.
+- Set your Notion key to Vercel.
+
+## Beginner
+- Make your page on Notion with TypeScript, React, and Notion databases.
+- Language: TypeScript
+- Framework: React
+- Persistence: Notion (DB)
+
+## Professional
+- Develop API on VS code web.
+
+# Base: Next.js Notion Starter Kit
 
 > The perfect starter kit for building websites with Next.js and Notion.
 
