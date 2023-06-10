@@ -12,10 +12,12 @@
 - Framework: React
 - Persistence: Notion (DB)
 - Focus on core logics, not pretty UIs.
+- Ask professionals to create components for your usages.
 
 ## Professional
 - Develop API on VS code web.
 - Support beginners' efforts.
+- Create components.
 
 # Base: Next.js Notion Starter Kit
 
