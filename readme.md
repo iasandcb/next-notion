@@ -11,9 +11,11 @@
 - Language: TypeScript
 - Framework: React
 - Persistence: Notion (DB)
+- Focus on core logics, not pretty UIs.
 
 ## Professional
 - Develop API on VS code web.
+- Support beginners' efforts.
 
 # Base: Next.js Notion Starter Kit
 
