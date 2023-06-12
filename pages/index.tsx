@@ -4,7 +4,7 @@ import { NotionPage } from '@/components/NotionPage'
 import { domain } from '@/lib/config'
 import { resolveNotionPage } from '@/lib/resolve-notion-page'
 
-export const getStaticProps = async () => {
+export const getStaticProps = async (context) => {
   try {
     const props = await resolveNotionPage(domain)
 
