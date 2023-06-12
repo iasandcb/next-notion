@@ -4,6 +4,19 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 })
 
 module.exports = withBundleAnalyzer({
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: process.env.NODE_ENV === 'production' ? 'public, max-age=0, must-revalidate' : 'no-store, must-revalidate'
+          }
+        ]
+      }
+    ]
+  },
   staticPageGenerationTimeout: 300,
   images: {
     domains: [
