@@ -4,6 +4,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 })
 
 module.exports = withBundleAnalyzer({
+  // value: process.env.NODE_ENV === 'production' ? 'public, max-age=0, must-revalidate' : 'no-store, must-revalidate'
   async headers() {
     return [
       {
@@ -11,7 +12,7 @@ module.exports = withBundleAnalyzer({
         headers: [
           {
             key: 'Cache-Control',
-            value: process.env.NODE_ENV === 'production' ? 'public, max-age=0, must-revalidate' : 'no-store, must-revalidate'
+            value: 'no-store, must-revalidate'
           }
         ]
       }
