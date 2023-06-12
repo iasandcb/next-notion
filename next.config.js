@@ -7,7 +7,7 @@ module.exports = withBundleAnalyzer({
   async headers() {
     return [
       {
-        source: '/:path*',
+        source: '/',
         headers: [
           {
             key: 'Cache-Control',
