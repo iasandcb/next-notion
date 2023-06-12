@@ -4,21 +4,6 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 })
 
 module.exports = withBundleAnalyzer({
-  // value: process.env.NODE_ENV === 'production' ? 'public, max-age=0, must-revalidate' : 'no-store, must-revalidate'
-  // no-store, must-revalidate
-  async headers() {
-    return [
-      {
-        source: '/',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'private'
-          }
-        ]
-      }
-    ]
-  },
   staticPageGenerationTimeout: 300,
   images: {
     domains: [
