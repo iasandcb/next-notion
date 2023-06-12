@@ -13,7 +13,7 @@ module.exports = withBundleAnalyzer({
         headers: [
           {
             key: 'Cache-Control',
-            value: 's-maxage=1, stale-while-revalidate=5'
+            value: 'private'
           }
         ]
       }
