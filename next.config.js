@@ -4,11 +4,6 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 })
 
 module.exports = withBundleAnalyzer({
-  async rewrites() {
-    return [
-      {source: '/fp-ts/:slug', destination: '/fp-ts/:slug.js'}
-    ]
-  },
   staticPageGenerationTimeout: 300,
   images: {
     domains: [
