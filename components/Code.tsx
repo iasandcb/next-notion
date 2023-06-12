@@ -31,13 +31,22 @@ export const Code: React.FC<{
         />
       </>
     )
-  } else {
+  }
+  if (content === 'ts') {
     return (
       <>
-        <Script strategy={inlineStrategy} scriptType={inlineType}>
-          {content}
-        </Script>
+        <Script 
+          src='/js/ts.js' 
+          strategy='lazyOnload'
+        />
       </>
-    )    
+    )
   }
+  return (
+    <>
+      <Script strategy={inlineStrategy} scriptType={inlineType}>
+        {content}
+      </Script>
+    </>
+  )    
 }
