@@ -76,7 +76,6 @@ const ignoreProps = [
 ]
 
 const loadScript = (props: ScriptProps): void => {
-  console.log('L', props)
   const {
     src,
     id,
