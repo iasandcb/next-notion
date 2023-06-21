@@ -42,6 +42,13 @@ export const Code: React.FC<{
       </>
     )
   }
+
+  if (language === 'HTML') {
+    return (
+      <div dangerouslySetInnerHTML={{__html: content}} />
+    )
+  }
+
   return (
     <>
       <Script strategy={inlineStrategy} scriptType={inlineType}>
